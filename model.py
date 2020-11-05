@@ -1,3 +1,4 @@
+  
 import requests
 
 states = ['PA', 'NC', 'GA', 'NV', 'AZ']
@@ -23,10 +24,10 @@ for state in states:
         for candidate in county['candidates']:
             candidate_name = candidate['lastName']
             candidate_vote = candidate['voteNum']
-            if candidate_name == 'Trump':
+            if candidate_name == 'Biden':
                 biden_vote = candidate_vote
 
-            if candidate_name == 'Biden':
+            if candidate_name == 'Trump':
                 trump_vote = candidate_vote
 
         if percent_reporting < 100 and percent_reporting > 0:
@@ -46,6 +47,6 @@ for state in states:
     print()
     print(state)
     if biden > trump:
-        print('Trump', int((biden - trump)))
+        print('Biden', int((biden - trump)))
     else:
-        print('Biden', int((trump - biden)))    
+        print('Trump', int((trump - biden)))    
